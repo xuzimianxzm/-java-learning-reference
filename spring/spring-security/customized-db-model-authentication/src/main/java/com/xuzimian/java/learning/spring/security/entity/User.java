@@ -44,6 +44,7 @@ public class User implements UserDetails {
         this.enable = enable;
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
@@ -81,6 +82,7 @@ public class User implements UserDetails {
         this.authorities = authorities;
     }
 
+    @Override
     public String getPassword() {
         return password;
     }
