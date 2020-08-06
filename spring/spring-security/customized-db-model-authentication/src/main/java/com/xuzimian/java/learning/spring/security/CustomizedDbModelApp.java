@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 @MapperScan("com.xuzimian.java.learning.spring.security")
-public class App {
+public class CustomizedDbModelApp {
     public static void main(String[] args) {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(CustomizedDbModelApp.class, args);
     }
 }
