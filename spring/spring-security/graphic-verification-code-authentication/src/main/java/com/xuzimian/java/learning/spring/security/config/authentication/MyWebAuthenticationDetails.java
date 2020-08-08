@@ -31,5 +31,4 @@ public class MyWebAuthenticationDetails extends WebAuthenticationDetails {
     public String getSavedImageCode() {
         return savedImageCode;
     }
-
 }
