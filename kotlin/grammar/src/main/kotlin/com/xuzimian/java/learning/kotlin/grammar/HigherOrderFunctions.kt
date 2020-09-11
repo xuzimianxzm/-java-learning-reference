@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test
 class LambdaExpression {
 
     @Test
-    fun `lambda expression`() {
+    fun lambdaExpressionDemo() {
         val lambdaExpression = { int: Int -> println(int) }
 
         lambdaExpression(0)
     }
 
     @Test
-    fun `lambda expression function body`() {
+    fun lambdaExpressionFunctionBodyDemo() {
         fun lambdaExpressionFunctionBody(int: Int) = { println(int) }
 
         lambdaExpressionFunctionBody(1)
@@ -22,7 +22,7 @@ class LambdaExpression {
     }
 
     @Test
-    fun `lambda expression function body derive 1`() {
+    fun lambdaExpressionFunctionBodyDerive1Demo() {
         fun lambdaExpressionFunctionBodyDerive1(int: Int) = { -> println(int) }
 
         lambdaExpressionFunctionBodyDerive1(4)
@@ -30,7 +30,7 @@ class LambdaExpression {
     }
 
     @Test
-    fun `lambda expression function body derive 2`() {
+    fun lambdaExpressionFunctionBodyDerive2Demo() {
         fun lambdaExpressionFunctionBodyDerive2(int: Int): () -> Unit {
             return { println(int) }
         }
@@ -41,7 +41,7 @@ class LambdaExpression {
     }
 
     @Test
-    fun `self-running lambda syntax`() {
+    fun selfRunningLambdaDemo() {
         { string: String -> println(string) }("自运行的lambda语法")
     }
 }
