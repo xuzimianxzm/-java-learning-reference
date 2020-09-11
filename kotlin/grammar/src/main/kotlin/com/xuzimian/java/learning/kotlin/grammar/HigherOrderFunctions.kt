@@ -45,20 +45,36 @@ class LambdaExpression {
     fun selfRunningLambdaDemo() {
         { string: String -> println(string) }("自运行的lambda语法")
     }
+}
 
-    /**
-     * 柯里化函数
-     */
+/**
+ * 柯里化函数
+ */
+class CurringFunction {
+
     @Test
-    fun curryingFunctionDemo() {
+    fun curryingSumFunctionDemo() {
         fun sum(x: Int) = { y: Int ->
             { z: Int -> x + y + z }
         }
 
         assertEquals(6, sum(1)(2)(3))
     }
-}
 
+    /**
+     * 最后一个参数是函数类型时，可以采用柯里化风格调用
+     */
+    @Test
+    fun curringLikeDemo() {
+        fun curringLike(content: String, apply: (String) -> Unit) {
+            apply(content)
+        }
+
+        curringLike("look like curring style") { content ->
+            println(content)
+        }
+    }
+}
 
 
 
