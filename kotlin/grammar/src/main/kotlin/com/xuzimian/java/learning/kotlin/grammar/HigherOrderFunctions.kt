@@ -1,5 +1,6 @@
 package com.xuzimian.java.learning.kotlin.grammar
 
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 
@@ -43,6 +44,18 @@ class LambdaExpression {
     @Test
     fun selfRunningLambdaDemo() {
         { string: String -> println(string) }("自运行的lambda语法")
+    }
+
+    /**
+     * 柯里化函数
+     */
+    @Test
+    fun curryingFunctionDemo() {
+        fun sum(x: Int) = { y: Int ->
+            { z: Int -> x + y + z }
+        }
+
+        assertEquals(6, sum(1)(2)(3))
     }
 }
 
