@@ -19,10 +19,10 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private String rememberKey;
-    private DataSource dataSource;
-    private UserDetailsService userDetailsService;
-    private SpringSessionBackedSessionRegistry sessionRegistry;
+    private final String rememberKey;
+    private final DataSource dataSource;
+    private final UserDetailsService userDetailsService;
+    private final SpringSessionBackedSessionRegistry sessionRegistry;
 
     @Autowired
     public SecurityConfig(@Value("${spring.security.remember-me.key}") String rememberKey,
@@ -48,6 +48,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/api/**")
                 .hasRole("USER")
                 .antMatchers("/app/api/**")
+                .permitAll()
+                .antMatchers("/cas/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
