@@ -18,7 +18,7 @@ public class ThreadInterruptDemo {
         System.out.println("此时中断状态：" + Thread.currentThread().isInterrupted());
 
         System.out.println();
-        System.out.println("再次调用interrupt()...");
+        System.out.println("再次调用interrupt");
         Thread.currentThread().interrupt();
         System.out.println("再调用interrupted方法返回结果：" + Thread.currentThread().interrupted());
         System.out.println("此时中断状态：" + Thread.currentThread().isInterrupted());
